@@ -1,9 +1,9 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({ name: "bids" })
 export class Bid {
 
-    @PrimaryColumn({ type: "uuid" })
+    @PrimaryGeneratedColumn("uuid")
     id: string;
 
     @Column({ name: "product_id", type: "uuid" })

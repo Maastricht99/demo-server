@@ -1,9 +1,10 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { ProductStatus } from "./enum/product-status";
 
 @Entity({ name: "products" })
 export class Product {
 
-    @PrimaryColumn({ type: "uuid" })
+    @PrimaryGeneratedColumn("uuid")
     id: string;
 
     @Column({ name: "creator_id", type: "uuid" })
@@ -21,6 +22,12 @@ export class Product {
     @Column({ name: "starting_price", nullable: true })
     startingPrice: number;
 
+    @Column({ type: "enum", enum: ProductStatus })
+    status: ProductStatus;
+
+    @Column({ name: "auction_deadline", type: "timestamp" })
+    auctionDeadline: Date;
+
     @Column({ name: "created_at", type: "timestamp" })
     createdAt: Date;
 
@@ -34,6 +41,7 @@ export class Product {
         this.name = name;
         this.description = description;
         this.pictureUrl = pictureUrl;
-        this.createdAt = new Date()
+        this.createdAt = new Date();
+        this.status = ProductStatus.PENDING;
     }
 }
