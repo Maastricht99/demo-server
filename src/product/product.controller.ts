@@ -1,4 +1,4 @@
-import { Body, Controller, Param, ParseUUIDPipe, Post, Put } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseUUIDPipe, Post, Put, Query } from '@nestjs/common';
 import { ZodValidationPipe } from 'src/shared/zod-validation.pipe';
 import { CreateProductDto, CreateProductSchema } from './schema/create-product.schema';
 import { ProductService } from './product.service';
@@ -11,19 +11,17 @@ export class ProductController {
         private readonly productService: ProductService
     ) {};
 
+    @Get("/")
+    async getMyProducts(
+        @Query("userId", ParseUUIDPipe) userId: string
+    ) {
+        return this.productService.getMyProducts(userId);
+    }
+
     @Post("/")
     async createProduct(
         @Body(new ZodValidationPipe(CreateProductSchema)) dto: CreateProductDto
     ) {
-        const userId = "xxx";
-        return this.productService.createProduct(userId, dto);
-    }
-
-    @Put("/:productId/auctionable")
-    async setProductAuctionable(
-        @Param("productId", ParseUUIDPipe) productId,
-        @Body(new ZodValidationPipe(SetProductAuctionableSchema)) dto: SetProductAuctionableDto
-    ) {
-        return this.productService.setProductAuctionable(productId, dto);
+        return this.productService.createProduct(dto.creatorId, dto);
     }
 }

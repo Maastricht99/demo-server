@@ -1,5 +1,4 @@
 export enum ProductStatus {
-    PENDING,
-    CONFIRMATION,
-    AUCTIONABLE
+    PENDING = "PENDING",
+    AUCTIONED = "AUCTIONED"
 }

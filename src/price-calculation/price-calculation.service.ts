@@ -15,14 +15,14 @@ export class PriceCalculationService {
     async handleProductCreated(payload: any) {
 
         // Simulate long asynchronous background process
-        await new Promise(res => setTimeout(res, 10000));
+        await new Promise(res => setTimeout(res, 20000));
         
         const randomPrice = Math.floor(Math.random() * 100);
 
         const product = await this.manager.findOneBy(Product, { id: payload.productId });
 
         product.startingPrice = randomPrice;
-        product.status = ProductStatus.CONFIRMATION;
+        product.status = ProductStatus.AUCTIONED;
 
         await this.manager.save(Product, product);
     }

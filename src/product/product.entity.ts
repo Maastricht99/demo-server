@@ -22,7 +22,7 @@ export class Product {
     @Column({ type: "enum", enum: ProductStatus })
     status: ProductStatus;
 
-    @Column({ name: "auction_deadline", type: "timestamp" })
+    @Column({ name: "auction_deadline", type: "timestamp", nullable: true })
     auctionDeadline: Date;
 
     @Column({ name: "created_at", type: "timestamp" })

@@ -14,6 +14,14 @@ export class ProductService {
         private readonly eventEmitter: EventEmitter2
     ) {};
 
+    async getMyProducts(userId: string) {
+        const products = await this.manager.findBy(Product, {
+            creatorId: userId
+        });
+
+        return products.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+    }
+
     async createProduct(userId: string, dto: CreateProductDto) {
         const product = new Product(
             userId,
@@ -24,16 +32,5 @@ export class ProductService {
         await this.manager.save(product);
 
         this.eventEmitter.emit("product.created", { productId: product.id });
-    }
-
-    async setProductAuctionable(productId: string, dto: SetProductAuctionableDto) {
-        const product = await this.manager.findOneBy(Product, { id: productId });
-
-        product.status = ProductStatus.AUCTIONABLE;
-        product.auctionDeadline = dto.deadline;
-
-        await this.manager.save(Product, product);
-
-        // emit websocket event
     }
 }
