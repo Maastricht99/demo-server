@@ -16,9 +16,6 @@ export class Product {
     @Column()
     description: string;
 
-    @Column({ name: "picture_url" })
-    pictureUrl: string;
-
     @Column({ name: "starting_price", nullable: true })
     startingPrice: number;
 
@@ -35,12 +32,10 @@ export class Product {
         creatorId: string,
         name: string,
         description: string,
-        pictureUrl: string,
     ) {
         this.creatorId = creatorId;
         this.name = name;
         this.description = description;
-        this.pictureUrl = pictureUrl;
         this.createdAt = new Date();
         this.status = ProductStatus.PENDING;
     }

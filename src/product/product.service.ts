@@ -18,8 +18,7 @@ export class ProductService {
         const product = new Product(
             userId,
             dto.name,
-            dto.description,
-            dto.pictureUrl
+            dto.description
         );
 
         await this.manager.save(product);
