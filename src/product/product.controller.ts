@@ -2,7 +2,6 @@ import { Body, Controller, Get, Param, ParseUUIDPipe, Post, Put, Query } from '@
 import { ZodValidationPipe } from 'src/shared/zod-validation.pipe';
 import { CreateProductDto, CreateProductSchema } from './schema/create-product.schema';
 import { ProductService } from './product.service';
-import { SetProductAuctionableDto, SetProductAuctionableSchema } from './schema/set-product-auctionable.schema';
 
 @Controller("/products")
 export class ProductController {

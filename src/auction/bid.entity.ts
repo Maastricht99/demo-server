@@ -18,7 +18,7 @@ export class Bid {
     @Column({ name: "created_at", type: "timestamp" })
     createdAt: Date;
 
-    contructor(
+    constructor(
         productId: string,
         userId: string,
         amount: number

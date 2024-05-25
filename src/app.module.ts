@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
 import { AuthModule } from './auth/auth.module';
 import { ProductModule } from './product/product.module';
-import { BidModule } from './bid/bid.module';
 import { PriceCalculationModule } from './price-calculation/price-calculation.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './auth/user.entity';
 import { Product } from './product/product.entity';
-import { Bid } from './bid/bid.entity';
+import { Bid } from './auction/bid.entity';
 import { EventEmitterModule } from "@nestjs/event-emitter";
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { AuctionModule } from './auction/auction.module';
 
 @Module({
   imports: [
@@ -32,8 +32,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     }),
     AuthModule, 
     ProductModule, 
-    BidModule, 
-    PriceCalculationModule
+    PriceCalculationModule, AuctionModule
   ],
   controllers: [],
   providers: [],

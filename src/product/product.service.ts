@@ -2,8 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { CreateProductDto } from './schema/create-product.schema';
 import { Product } from './product.entity';
 import { EntityManager } from 'typeorm';
-import { SetProductAuctionableDto } from './schema/set-product-auctionable.schema';
-import { ProductStatus } from './enum/product-status';
 import { EventEmitter2 } from '@nestjs/event-emitter';
 
 @Injectable()
@@ -33,4 +31,5 @@ export class ProductService {
 
         this.eventEmitter.emit("product.created", { productId: product.id });
     }
+
 }

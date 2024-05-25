@@ -16,8 +16,8 @@ export class Product {
     @Column()
     description: string;
 
-    @Column({ name: "starting_price", nullable: true })
-    startingPrice: number;
+    @Column({ name: "current_price", nullable: true })
+    currentPrice: number;
 
     @Column({ type: "enum", enum: ProductStatus })
     status: ProductStatus;
