@@ -4,6 +4,6 @@ import { AuctionModule } from 'src/auction/auction.module';
 
 @Module({
   providers: [PriceCalculationService],
-  imports: [AuctionModule]
+  imports: [AuctionModule],
 })
 export class PriceCalculationModule {}
