@@ -45,7 +45,7 @@ export class AuctionGateaway
     payload: { productId: string },
   ) {
     const bids = await this.auctionService.getProductBids(payload.productId);
-    client.emit('sendInitialProduct', bids);
+    client.emit('sendInitialProductBids', bids);
   }
 
   @SubscribeMessage('addNewBid')
