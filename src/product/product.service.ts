@@ -27,6 +27,13 @@ export class ProductService {
       'https://media.wired.com/photos/6511aab1189c419c40374c92/1:1/w_1358,h_1358,c_limit/Apple-Watch-Ultra-2-Alt-Gear.jpg',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiLEPuSGGRUeVFYsGX3ZoBDzsE4AuKeUFm5_ctaOyccg&s',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhzUGRk_P017NE7rMa0jHqdUmljWAmt-ZYDO0h9D4YLw&s',
+      'https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw34d84041/images/Titan/Catalog/1698KM02_1.jpg?sw=800&sh=800',
+      'https://images.unsplash.com/photo-1587925358603-c2eea5305bbc?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d3Jpc3R3YXRjaHxlbnwwfHwwfHx8MA%3D%3D',
+      'https://media.rolex.com/image/upload/v1710347640/rolexcom/new-watches/2024/main-navigation/rolex-watches-navigation-submariner-m124060-0001-10156_rsa_submariner_41_m124060_0001_carrousel_24.jpg',
+      'https://www.audemarspiguet.com/content/dam/ap/com/homepage/2024/john-mayer/image_code_HP_1920x1283.jpg.transform.apfw.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgRa8w3XcoHsQD9dHNS6MfD9kQGBtpcfYiUBPr7iWwZw&s',
+      'https://images.unsplash.com/photo-1619134778706-7015533a6150?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdhdGNoZXN8ZW58MHx8MHx8fDA%3D',
+      'https://images.unsplash.com/photo-1595923533867-ff8a01335ff9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdyaXN0d2F0Y2h8ZW58MHx8MHx8fDA%3D',
     ];
 
     const pictureUrl = pictures[Math.floor(Math.random() * pictures.length)];
